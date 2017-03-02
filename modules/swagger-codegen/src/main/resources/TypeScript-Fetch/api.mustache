@@ -124,16 +124,16 @@ export const {{classname}}FetchParamCreator = {
         // authentication ({{name}}) required
 {{#isApiKey}}
 {{#isKeyInHeader}}
-        if (configuration.apiKey && configuration.apiKey.{{keyParamName}}) {
+        if (configuration.apiKey && configuration.apiKey["{{keyParamName}}"]) {
             fetchOptions.headers = {{#supportsES6}}Object.{{/supportsES6}}assign({
-                    "{{keyParamName}}": configuration.apiKey.{{keyParamName}},
+                    "{{keyParamName}}": configuration.apiKey["{{keyParamName}}"],
                     }, contentTypeHeader);
         }
 {{/isKeyInHeader}}
 {{#isKeyInQuery}}
-        if (configuration.apiKey && configuration.apiKey.{{keyParamName}}) {
+        if (configuration.apiKey && configuration.apiKey["{{keyParamName}}"]) {
             urlObj.query = {{#supportsES6}}Object.{{/supportsES6}}assign({}, urlObj.query, {
-                    "{{keyParamName}}": configuration.apiKey.{{keyParamName}},
+                    "{{keyParamName}}": configuration.apiKey["{{keyParamName}}"],
                     });
         }
 {{/isKeyInQuery}}

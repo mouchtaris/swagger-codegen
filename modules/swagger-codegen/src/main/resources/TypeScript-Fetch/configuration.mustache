@@ -2,7 +2,7 @@ export class Configuration {
     apiKey: {
 {{#authMethods}}
 {{#isApiKey}}
-        {{keyParamName}}: string;
+        "{{keyParamName}}": string;
 {{/isApiKey}}
 {{/authMethods}}
     };
